@@ -1,4 +1,4 @@
-class PagesController < ApplicationController
+class RestaurantsController < ApplicationController
   def index
   end
 
@@ -8,7 +8,10 @@ class PagesController < ApplicationController
   def new
   end
 
-  def createedit
+  def create
+  end
+
+  def edit
   end
 
   def update
