@@ -1,20 +1,25 @@
-<h1>Restaurants#show</h1>
-<p>Find me in app/views/restaurants/show.html.erb</p>
+<h2>Voici la fiche du restaurant : <%= @restaurant.name %></h2>
 
- <h2> name : <%= @restaurant.name %></h2>
-  <p>address : <%= @restaurant.address %></p>
-  <p>phone_number : <%= @restaurant.phone_number %></p>
-  <p>category : <%= @restaurant.category %></p>
 
+ <h3> name: <%= @restaurant.name %></h3>
+  <p>address: <%= @restaurant.address %></p>
+  <p>phone_number: <%= @restaurant.phone_number %></p>
+  <p>category: <%= @restaurant.category %></p>
+<ul class="list-inline">
+<li>
 <%= link_to "Delete", restaurant_path(@restaurant),
     method: :delete,
     data: { confirm: "Are you sure that you want to delete?" } %>
-
+</li>
+<li>
 <%= link_to "Update", edit_restaurant_path(@restaurant) %>
-
-
-<br>
-<br>
-<br>
-
+</li>
+<li>
 <%= link_to "Liste des restaurants", restaurants_path %>
+</li>
+<li>
+<%= link_to "Show all reviews and ratings for this restaurant", restaurant_reviews_path(@restaurant) %>
+</li>
+</ul>
+
+<%= link_to "Retourner à la liste des restaurants", restaurants_path %>

@@ -1,20 +1,31 @@
-<h1>Restaurants#index</h1>
-<p>Find me in app/views/restaurants/index.html.erb</p>
 
 
-<% @restaurants.each do |restaurant| %>
-  <h2> name : <%= restaurant.name %></h2>
-  <p>address : <%= restaurant.address %></p>
-  <p>phone_number : <%= restaurant.phone_number %></p>
-  <p>category : <%= restaurant.category %></p>
-    <%= link_to "Delete", restaurant_path(restaurant),
-        method: :delete,
-        data: { confirm: "Are you sure that you want to delete?" } %>
+<div class="container text-center " id="home_page">
+<h1>Liste des restaurants</h1>
 
-    <%= link_to "Update", edit_restaurant_path(restaurant) %>
+  <div class="container">
+    <% @restaurants.each do |restaurant| %>
+      <div class="text-left" id="restaurant_card">
+        <h2> name : <%= restaurant.name %></h2>
+        <p>address : <%= restaurant.address %></p>
+        <p>phone_number : <%= restaurant.phone_number %></p>
+        <p>category : <%= restaurant.category %></p>
 
-<% end %>
+          <%= link_to "Delete", restaurant_path(restaurant),
+              method: :delete,
+              data: { confirm: "Are you sure that you want to delete?" } %>
+          <br>
+          <%= link_to "Update", edit_restaurant_path(restaurant) %>
+          <br>
+          <%= link_to "Add a review and rating", new_restaurant_review_path(restaurant) %>
+          <br>
+          <%= link_to "Show all reviews and ratings for this restaurant", restaurant_reviews_path(restaurant) %>
 
+    </div>
+      <% end %>
+  </div>
 
+    <br>
+     <%= link_to "Create a new restaurant", new_restaurant_path %>
 
- <%= link_to "Create a new restaurant", new_restaurant_path %>
+</div>
