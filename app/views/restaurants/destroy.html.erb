@@ -1,2 +1,6 @@
 <h1>Restaurants#destroy</h1>
 <p>Find me in app/views/restaurants/destroy.html.erb</p>
+
+<%= link_to "Delete", retaurant_path(restaurant),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
